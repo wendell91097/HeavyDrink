@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section class="bg-dark text-light text-center shadow mb-20 pt-5">
+        <div class="container p-5 bg-dark">
+            <div class="row">
+                <div class="d-md-flex bg-dark align-items-center justify-content-evenly">
+                    <h1 class="col text-center">{{ current_user.email }}</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="text-center">
+        <div class="container p-10">
+            <div class="row"><br>
+                <h3 class="py-3">Here are your profile details:</h3>
+                <ul class="list-group">
+                    <li class="list-group-item">Email : {{ current_user.email }}</li>
+                    <li class="list-group-item">Token : {{ current_user.token }}</li>
+                </ul>
+            </div>
+            <div class="row align-items-center justify-content-center" style="margin: 20px;">
+                <div class="d-flex align-items-center justify-content-center col-10 p-10">
+                    <img src="../../static/Images/beer bottle.jpg" class="d-flex bg-dark shadow p-30 img-fluid" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% endblock %}

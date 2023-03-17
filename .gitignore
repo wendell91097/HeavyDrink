@@ -1,0 +1,4 @@
+walkthrough_env
+__pycache__
+.env
+venv
