@@ -30,22 +30,22 @@ def create_beverage(current_user_token):
 
 @api.route('/drinks', methods = ['GET'])
 @token_required
-def get_car(current_user_token):
+def get_beverage(current_user_token):
     a_user = current_user_token.token
     beverages = Beverage.query.filter_by(user_token = a_user).all()
-    response = beverage_schema.dump(beverages)
+    response = beverages_schema.dump(beverages)
     return jsonify(response)
 
 @api.route('/drinks/<id>', methods = ['GET'])
 @token_required
-def get_single_contact(current_user_token, id):
+def get_single_beverage(current_user_token, id):
     contact = Beverage.query.get(id)
     response = beverage_schema.dump(contact)
     return jsonify(response)
 
 @api.route('/drinks/<id>', methods = ['POST','PUT'])
 @token_required
-def update_contact(current_user_token,id):
+def update_beverage(current_user_token,id):
     beverage = Beverage.query.get(id)
     beverage.name = request.json['name']
     beverage.type = request.json['type']
